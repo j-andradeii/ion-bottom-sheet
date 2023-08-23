@@ -18,6 +18,7 @@
   ],
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
-    "enableResourceInlining": true
+    "enableResourceInlining": true,
+    "enableIvy": true,
   }
 }

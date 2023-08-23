@@ -1,6 +1,7 @@
 import { ElementRef, Renderer2, EventEmitter, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
 import { Platform, DomController } from '@ionic/angular';
 import { SheetState } from './ion-bottom-sheet-state';
+import * as i0 from "@angular/core";
 export declare class IonBottomSheetComponent implements AfterViewInit, OnChanges {
     private _element;
     private _renderer;
@@ -83,4 +84,5 @@ export declare class IonBottomSheetComponent implements AfterViewInit, OnChanges
     private _onContentGestureStart;
     private _onContentGestureEnd;
     private _onContentGestureMove;
+    static ngComponentDef: i0.ɵɵComponentDefWithMeta<IonBottomSheetComponent, "ion-bottom-sheet", never, { 'dockedHeight': "dockedHeight", 'minHeight': "minHeight", 'topDistance': "topDistance", 'bounceDelta': "bounceDelta", 'canBounce': "canBounce", 'roundBorder': "roundBorder", 'roundBorderOnTop': "roundBorderOnTop", 'shadowBorder': "shadowBorder", 'shadowBorderOnTop': "shadowBorderOnTop", 'disableDrag': "disableDrag", 'hideCloseButton': "hideCloseButton", 'hideCloseButtonOnTop': "hideCloseButtonOnTop", 'hideDragIcon': "hideDragIcon", 'hideDragIconOnTop': "hideDragIconOnTop", 'hideTitle': "hideTitle", 'hideHeader': "hideHeader", 'hideSeparator': "hideSeparator", 'titleCentered': "titleCentered", 'titleSize': "titleSize", 'titleFamily': "titleFamily", 'transition': "transition", 'state': "state", 'title': "title", 'enableScrollContent': "enableScrollContent", 'enableScrollContentOnlyOnTop': "enableScrollContentOnlyOnTop", 'enableShadowHeaderOnScrolling': "enableShadowHeaderOnScrolling", 'useSmoothScrolling': "useSmoothScrolling" }, { 'stateChange': "stateChange" }, never>;
 }
