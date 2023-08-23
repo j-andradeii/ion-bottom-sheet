@@ -1,19 +1,16 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+import { Component, Input, ElementRef, Renderer2, Output, EventEmitter } from '@angular/core';
+import { Platform, DomController } from '@ionic/angular';
 import { SheetState } from './ion-bottom-sheet-state';
 import * as Hammer from 'hammerjs';
-import * as i0 from "@angular/core";
-import * as i1 from "@ionic/angular";
-var _c0 = ["id", "ibs-container"];
-var _c1 = ["id", "ibs-header"];
-var _c2 = ["ibs_header", ""];
-var _c3 = ["id", "drag-icon"];
-var _c4 = ["id", "title-button"];
-var _c5 = ["id", "title"];
-var _c6 = ["id", "close-button"];
-var _c7 = ["id", "ibs-content"];
-var _c8 = ["ibs_content", ""];
-var _c9 = ["id", "ibs-content-inner"];
-var _c10 = ["*"];
 var IonBottomSheetComponent = /** @class */ (function () {
     function IonBottomSheetComponent(_element, _renderer, _domCtrl, _platform) {
         this._element = _element;
@@ -368,93 +365,130 @@ var IonBottomSheetComponent = /** @class */ (function () {
         }
         this._element.nativeElement.querySelector("#ibs-content-inner").scroll(0, nextScroll);
     };
-    IonBottomSheetComponent.ngComponentDef = i0.ɵɵdefineComponent({ type: IonBottomSheetComponent, selectors: [["ion-bottom-sheet"]], factory: function IonBottomSheetComponent_Factory(t) { return new (t || IonBottomSheetComponent)(i0.ɵɵdirectiveInject(i0.ElementRef), i0.ɵɵdirectiveInject(i0.Renderer2), i0.ɵɵdirectiveInject(i1.DomController), i0.ɵɵdirectiveInject(i1.Platform)); }, inputs: { dockedHeight: "dockedHeight", minHeight: "minHeight", topDistance: "topDistance", bounceDelta: "bounceDelta", canBounce: "canBounce", roundBorder: "roundBorder", roundBorderOnTop: "roundBorderOnTop", shadowBorder: "shadowBorder", shadowBorderOnTop: "shadowBorderOnTop", disableDrag: "disableDrag", hideCloseButton: "hideCloseButton", hideCloseButtonOnTop: "hideCloseButtonOnTop", hideDragIcon: "hideDragIcon", hideDragIconOnTop: "hideDragIconOnTop", hideTitle: "hideTitle", hideHeader: "hideHeader", hideSeparator: "hideSeparator", titleCentered: "titleCentered", titleSize: "titleSize", titleFamily: "titleFamily", transition: "transition", state: "state", title: "title", enableScrollContent: "enableScrollContent", enableScrollContentOnlyOnTop: "enableScrollContentOnlyOnTop", enableShadowHeaderOnScrolling: "enableShadowHeaderOnScrolling", useSmoothScrolling: "useSmoothScrolling" }, outputs: { stateChange: "stateChange" }, features: [i0.ɵɵNgOnChangesFeature()], ngContentSelectors: _c10, consts: 12, vars: 1, template: function IonBottomSheetComponent_Template(rf, ctx) { if (rf & 1) {
-            i0.ɵɵprojectionDef();
-            i0.ɵɵelementStart(0, "div", _c0);
-            i0.ɵɵelementStart(1, "div", _c1, _c2);
-            i0.ɵɵelement(3, "div", _c3);
-            i0.ɵɵelementStart(4, "div", _c4);
-            i0.ɵɵelementStart(5, "div", _c5);
-            i0.ɵɵtext(6);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(7, "div", _c6);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(8, "div", _c7, _c8);
-            i0.ɵɵelementStart(10, "div", _c9);
-            i0.ɵɵprojection(11);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-        } if (rf & 2) {
-            i0.ɵɵselect(6);
-            i0.ɵɵtextInterpolate(ctx.title);
-        } }, styles: ["[_nghost-%COMP%]  {\n  touch-action: none;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: 999 !important;\n  background-color: transparent;\n  will-change: transform;\n}\n\n[_nghost-%COMP%]   #ibs-container[_ngcontent-%COMP%]{\n  position: relative;\n  background-color: white;\n  width: 100%;\n  height: 100%;\n}\n\n[_nghost-%COMP%]   #ibs-container.round-border[_ngcontent-%COMP%]{\n  border-top-left-radius: 15px;\n  border-top-right-radius: 15px;\n}\n\n[_nghost-%COMP%]   #ibs-container.shadow-border[_ngcontent-%COMP%]{\n  box-shadow: 0px -2px 10px  rgba(0, 0, 0, 0.12);\n}\n\n[_nghost-%COMP%]   #ibs-header.bottom-header-shadow[_ngcontent-%COMP%]{\n  box-shadow: 0 3px 3px -3px  rgba(0, 0, 0, 0.12);\n}\n\n[_nghost-%COMP%]   #ibs-header[_ngcontent-%COMP%]{\n  padding: 5px;\n  width: 100%;\n  min-height: 35px;\n}\n\n[_nghost-%COMP%]   .separator[_ngcontent-%COMP%]{\n  border-bottom-style: solid;\n  border-bottom-color: rgba(220, 220, 220, 1);\n  border-bottom-width: 1px;\n}\n\n[_nghost-%COMP%]   #drag-icon[_ngcontent-%COMP%]{\n  margin: 0 auto;\n  height: 5px;\n  width: 36px;\n  background-color: #c0c0c0;\n  border-radius: 4px;\n}\n\n[_nghost-%COMP%]   #title-button[_ngcontent-%COMP%]{\n  width: 100%;\n  height: 100%;\n  position: relative;\n  height: 26px;\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n\n[_nghost-%COMP%]   #close-button[_ngcontent-%COMP%]{\n  width: 26px;\n  height: 26px;\n  position: absolute;\n  right: 10px;\n  background: #c0c0c0;\n  border-radius: 100%;\n  content: url('data:image/svg+xml; utf8, <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"> <path fill=\"7a7a7e\" d=\"M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z\"/> </svg>');\n}\n\n[_nghost-%COMP%]   #title[_ngcontent-%COMP%]{\n  position: absolute;\n  left: 10px;\n  padding: 0px;\n  margin: 0px;\n  font-size: 20px;\n  line-height: 26px;\n  color: inherit; \n}\n\n[_nghost-%COMP%]   .txt-center[_ngcontent-%COMP%]{\n  text-align: center;\n  width: 100%;\n  left: 0px !important;\n}\n\n[_nghost-%COMP%]   #ibs-content[_ngcontent-%COMP%]{\n  width: 100%;\n  height: 100%;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n\n[_nghost-%COMP%]   .pd5[_ngcontent-%COMP%]{\n  padding-top: 5px;\n}\n\n[_nghost-%COMP%]   #ibs-content-inner[_ngcontent-%COMP%]{\n  touch-action: none;\n  overflow: hidden;\n  height: 100%;\n}\n\n[_nghost-%COMP%]   .fadeOut[_ngcontent-%COMP%] {\n  visibility: hidden;\n  opacity: 0;\n  transition: visibility 0s linear 700ms, opacity 700ms;  \n}\n\n[_nghost-%COMP%]   .fadeIn[_ngcontent-%COMP%] {\n  visibility: visible;\n  opacity: 1;\n  transition: visibility 0s linear 0s, opacity 300ms;\n}\n\n.no-drag-icon[_nghost-%COMP%]   #drag-icon[_ngcontent-%COMP%], .no-close-btn[_nghost-%COMP%]   #close-button[_ngcontent-%COMP%], .no-title[_nghost-%COMP%]   #title[_ngcontent-%COMP%], .no-header[_nghost-%COMP%]   #ibs-header[_ngcontent-%COMP%] {\n  display: none !important;\n}\n\n.no-title[_nghost-%COMP%]   #title-button[_ngcontent-%COMP%] {\n  margin-top: 0px;\n}\n\n.no-title.no-drag-icon[_nghost-%COMP%]   #title-button[_ngcontent-%COMP%] {\n  margin-top: 5px;\n}\n\n.no-title.no-close-btn[_nghost-%COMP%]   #title-button[_ngcontent-%COMP%] {\n  margin-bottom: 0px;\n}\n\n.no-drag-icon.no-title.no-close-btn[_nghost-%COMP%]   #title-button[_ngcontent-%COMP%] {\n  margin-top: 0px;\n  margin-bottom: 0px;\n}"] });
+    __decorate([
+        Input(),
+        __metadata("design:type", Number)
+    ], IonBottomSheetComponent.prototype, "dockedHeight", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Number)
+    ], IonBottomSheetComponent.prototype, "minHeight", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Number)
+    ], IonBottomSheetComponent.prototype, "topDistance", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Number)
+    ], IonBottomSheetComponent.prototype, "bounceDelta", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "canBounce", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "roundBorder", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "roundBorderOnTop", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "shadowBorder", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "shadowBorderOnTop", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "disableDrag", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "hideCloseButton", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "hideCloseButtonOnTop", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "hideDragIcon", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "hideDragIconOnTop", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "hideTitle", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "hideHeader", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "hideSeparator", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "titleCentered", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], IonBottomSheetComponent.prototype, "titleSize", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], IonBottomSheetComponent.prototype, "titleFamily", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], IonBottomSheetComponent.prototype, "transition", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Number)
+    ], IonBottomSheetComponent.prototype, "state", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], IonBottomSheetComponent.prototype, "title", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "enableScrollContent", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "enableScrollContentOnlyOnTop", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "enableShadowHeaderOnScrolling", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], IonBottomSheetComponent.prototype, "useSmoothScrolling", void 0);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], IonBottomSheetComponent.prototype, "stateChange", void 0);
+    IonBottomSheetComponent = __decorate([
+        Component({
+            selector: 'ion-bottom-sheet',
+            template: "<div id=\"ibs-container\">\n  <div id=\"ibs-header\" #ibs_header>\n    <div id=\"drag-icon\"></div>\n    <div id=\"title-button\">\n      <div id=\"title\">{{ title }}</div>\n      <div id=\"close-button\"></div>\n    </div>\n  </div>\n  <div id=\"ibs-content\" #ibs_content>\n    <div id=\"ibs-content-inner\">\n      <ng-content></ng-content>\n    </div>\n  </div>\n</div>\n",
+            styles: [":host  {\n  touch-action: none;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: 999 !important;\n  background-color: transparent;\n  will-change: transform;\n}\n\n:host #ibs-container{\n  position: relative;\n  background-color: white;\n  width: 100%;\n  height: 100%;\n}\n\n:host #ibs-container.round-border{\n  border-top-left-radius: 15px;\n  border-top-right-radius: 15px;\n}\n\n:host #ibs-container.shadow-border{\n  box-shadow: 0px -2px 10px  rgba(0, 0, 0, 0.12);\n}\n\n:host #ibs-header.bottom-header-shadow{\n  box-shadow: 0 3px 3px -3px  rgba(0, 0, 0, 0.12);\n}\n\n:host #ibs-header{\n  padding: 5px;\n  width: 100%;\n  min-height: 35px;\n}\n\n:host .separator{\n  border-bottom-style: solid;\n  border-bottom-color: rgba(220, 220, 220, 1);\n  border-bottom-width: 1px;\n}\n\n:host #drag-icon{\n  margin: 0 auto;\n  height: 5px;\n  width: 36px;\n  background-color: #c0c0c0;\n  border-radius: 4px;\n}\n\n:host #title-button{\n  width: 100%;\n  height: 100%;\n  position: relative;\n  height: 26px;\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n\n:host #close-button{\n  width: 26px;\n  height: 26px;\n  position: absolute;\n  right: 10px;\n  background: #c0c0c0;\n  border-radius: 100%;\n  content: url('data:image/svg+xml; utf8, <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"> <path fill=\"7a7a7e\" d=\"M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z\"/> </svg>');\n}\n\n:host #title{\n  position: absolute;\n  left: 10px;\n  padding: 0px;\n  margin: 0px;\n  font-size: 20px;\n  line-height: 26px;\n  color: inherit; \n}\n\n:host .txt-center{\n  text-align: center;\n  width: 100%;\n  left: 0px !important;\n}\n\n:host #ibs-content{\n  width: 100%;\n  height: 100%;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n\n:host .pd5{\n  padding-top: 5px;\n}\n\n:host #ibs-content-inner{\n  touch-action: none;\n  overflow: hidden;\n  height: 100%;\n}\n\n:host .fadeOut {\n  visibility: hidden;\n  opacity: 0;\n  transition: visibility 0s linear 700ms, opacity 700ms;  \n}\n\n:host .fadeIn {\n  visibility: visible;\n  opacity: 1;\n  transition: visibility 0s linear 0s, opacity 300ms;\n}\n\n:host.no-drag-icon #drag-icon,\n:host.no-close-btn #close-button,\n:host.no-title #title,\n:host.no-header #ibs-header {\n  display: none !important;\n}\n\n:host.no-title #title-button {\n  margin-top: 0px;\n}\n\n:host.no-title.no-drag-icon #title-button {\n  margin-top: 5px;\n}\n\n:host.no-title.no-close-btn #title-button {\n  margin-bottom: 0px;\n}\n\n:host.no-drag-icon.no-title.no-close-btn #title-button {\n  margin-top: 0px;\n  margin-bottom: 0px;\n}\n"]
+        }),
+        __metadata("design:paramtypes", [ElementRef,
+            Renderer2,
+            DomController,
+            Platform])
+    ], IonBottomSheetComponent);
     return IonBottomSheetComponent;
 }());
 export { IonBottomSheetComponent };
-/*@__PURE__*/ i0.ɵsetClassMetadata(IonBottomSheetComponent, [{
-        type: Component,
-        args: [{
-                selector: 'ion-bottom-sheet',
-                templateUrl: './ion-bottom-sheet.component.html',
-                styleUrls: ['./ion-bottom-sheet.component.scss']
-            }]
-    }], function () { return [{ type: i0.ElementRef }, { type: i0.Renderer2 }, { type: i1.DomController }, { type: i1.Platform }]; }, { dockedHeight: [{
-            type: Input
-        }], minHeight: [{
-            type: Input
-        }], topDistance: [{
-            type: Input
-        }], bounceDelta: [{
-            type: Input
-        }], canBounce: [{
-            type: Input
-        }], roundBorder: [{
-            type: Input
-        }], roundBorderOnTop: [{
-            type: Input
-        }], shadowBorder: [{
-            type: Input
-        }], shadowBorderOnTop: [{
-            type: Input
-        }], disableDrag: [{
-            type: Input
-        }], hideCloseButton: [{
-            type: Input
-        }], hideCloseButtonOnTop: [{
-            type: Input
-        }], hideDragIcon: [{
-            type: Input
-        }], hideDragIconOnTop: [{
-            type: Input
-        }], hideTitle: [{
-            type: Input
-        }], hideHeader: [{
-            type: Input
-        }], hideSeparator: [{
-            type: Input
-        }], titleCentered: [{
-            type: Input
-        }], titleSize: [{
-            type: Input
-        }], titleFamily: [{
-            type: Input
-        }], transition: [{
-            type: Input
-        }], state: [{
-            type: Input
-        }], title: [{
-            type: Input
-        }], enableScrollContent: [{
-            type: Input
-        }], enableScrollContentOnlyOnTop: [{
-            type: Input
-        }], enableShadowHeaderOnScrolling: [{
-            type: Input
-        }], useSmoothScrolling: [{
-            type: Input
-        }], stateChange: [{
-            type: Output
-        }] });
 //# sourceMappingURL=ion-bottom-sheet.component.js.map
