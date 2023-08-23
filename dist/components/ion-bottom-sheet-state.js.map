@@ -1,1 +1,0 @@
-{"version":3,"file":"ion-bottom-sheet-state.js","sourceRoot":"","sources":["../../src/components/ion-bottom-sheet-state.ts"],"names":[],"mappings":"AAAA,MAAM,CAAN,IAAY,UAIT;AAJH,WAAY,UAAU;IAClB,+CAAM,CAAA;IACN,+CAAM,CAAA;IACN,yCAAG,CAAA;AACL,CAAC,EAJS,UAAU,KAAV,UAAU,QAInB","sourcesContent":["export enum SheetState {\n    Bottom,\n    Docked,\n    Top\n  }"]}

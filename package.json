@@ -10,6 +10,7 @@
   "scripts": {
     "ngc": "ngc",
     "build": "rm -rf dist && npm run ngc",
+    "build-prod": "rm -rf dist && ng build --prod",
     "publishPackage": "npm run build && npm publish"
   },
   "repository": {
